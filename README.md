@@ -1,4 +1,4 @@
-# parcel-plugin-riot
+# parcel-plugin-riotjs
 
 A plugin for compiling riot tags with parcel.
 
@@ -7,4 +7,5 @@ Your riot configs could be on a riot(inside package.json), .riotrc(json) or .rio
 
 ## TODO
 
-- [] Read "ext" option (not sure if needed)
+- [] Read "ext" option
+- [] Check sourcemaps
