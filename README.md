@@ -7,5 +7,5 @@ Your riot configs could be on a riot(inside package.json), .riotrc(json) or .rio
 
 ## TODO
 
-- [] Read "ext" option
-- [] Check sourcemaps
+- [ ] Read "ext" option
+- [ ] Check sourcemaps
