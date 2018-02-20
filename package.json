@@ -1,14 +1,11 @@
 {
-  "name": "parcel-plugin-riot",
+  "name": "parcel-plugin-riotjs",
   "version": "0.0.1",
   "description": "A parcel plugin for compiling riot tags",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0tho/parcel-plugin-riot.git"
+    "url": "git+https://github.com/0tho/parcel-plugin-riotjs.git"
   },
   "keywords": [
     "riotjs",
@@ -16,10 +13,19 @@
     "bundle",
     "plugin"
   ],
-  "author": "Otho <otho@otho.me> (http://www.otho.me)",
+  "author": {
+    name: "Otho",
+    email: "otho@otho.me",
+    url: "http://www.otho.me"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/0tho/parcel-plugin-riot/issues"
+    "url": "https://github.com/0tho/parcel-plugin-riotjs/issues"
   },
-  "homepage": "https://github.com/0tho/parcel-plugin-riot#readme"
+  "homepage": "https://github.com/0tho/parcel-plugin-riotjs#readme",
+  dependencies: [
+    "parcel-bundler": "^1.0.0",
+    "riot": "^3.0.0",
+    "riot-compiler": "^3.0.0"
+  ]
 }
