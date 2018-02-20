@@ -27,9 +27,7 @@ class RiotAsset extends JSAsset {
       this.sourceMap.sourcesContent = [this.contents]
     }
 
-    this.contents = this.options.sourceMaps ? code : transpiled;
-
-    return await JSAsset.prototype.parse.call(this, this.contents);
+    return await JSAsset.prototype.parse.call(this, code);
   }
 }
 
