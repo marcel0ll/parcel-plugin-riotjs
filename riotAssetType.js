@@ -6,13 +6,13 @@ const JSAsset = parseInt(process.versions.node, 10) < 8 ? JSAssetLib : JSAssetSr
 const riot = require("riot-compiler")
 
 class RiotAsset extends JSAsset {
-  async parse(code) {
+  async parse(tagCode) {
     let config = this.package.riot ||
       (await this.getConfig(['.riotrc', '.riotrc.js'])) ||
       {}
 
     let transpiled = riot.compile(
-      code,
+      tagCode,
       Object.assign({sourcemap: this.options.sourceMap}, config),
       this.relativeName
     )
