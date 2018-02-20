@@ -17,7 +17,9 @@ class RiotAsset extends JSAsset {
       this.relativeName
     )
 
-    transpiled.code = "var riot = require('riot');\n" + transpiled.code
+    let code = this.options.sourceMap ? transpiled.code : transpiled
+
+    code = "var riot = require('riot');\n" + code
 
     if (transpiled.sourcemap) {
       this.sourceMap = transpiled.sourcemap.generate()
@@ -25,7 +27,7 @@ class RiotAsset extends JSAsset {
       this.sourceMap.sourcesContent = [this.contents]
     }
 
-    this.contents = this.options.sourceMaps ? transpiled.code : transpiled;
+    this.contents = this.options.sourceMaps ? code : transpiled;
 
     return await JSAsset.prototype.parse.call(this, this.contents);
   }
