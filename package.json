@@ -14,16 +14,16 @@
     "plugin"
   ],
   "author": {
-    name: "Otho",
-    email: "otho@otho.me",
-    url: "http://www.otho.me"
+    "name": "Otho",
+    "email": "otho@otho.me",
+    "url": "http://www.otho.me"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/0tho/parcel-plugin-riotjs/issues"
   },
   "homepage": "https://github.com/0tho/parcel-plugin-riotjs#readme",
-  dependencies: [
+  "dependencies": [
     "parcel-bundler": "^1.0.0",
     "riot": "^3.0.0",
     "riot-compiler": "^3.0.0"
