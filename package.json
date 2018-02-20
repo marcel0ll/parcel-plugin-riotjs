@@ -1,0 +1,25 @@
+{
+  "name": "parcel-plugin-riot",
+  "version": "0.0.1",
+  "description": "A parcel plugin for compiling riot tags",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0tho/parcel-plugin-riot.git"
+  },
+  "keywords": [
+    "riotjs",
+    "parceljs",
+    "bundle",
+    "plugin"
+  ],
+  "author": "Otho <otho@otho.me> (http://www.otho.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0tho/parcel-plugin-riot/issues"
+  },
+  "homepage": "https://github.com/0tho/parcel-plugin-riot#readme"
+}
