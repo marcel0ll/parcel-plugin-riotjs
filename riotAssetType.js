@@ -1,33 +1,33 @@
-const {Asset} = require('parcel-bundler');
-const JSAssetLib = require('parcel-bundler/lib/assets/JSAsset')
-const JSAssetSrc = require('parcel-bundler/src/assets/JSAsset')
+const JSAsset = require('parcel-bundler/lib/assets/JSAsset')
 
-const JSAsset = parseInt(process.versions.node, 10) < 8 ? JSAssetLib : JSAssetSrc
 const riot = require("riot-compiler")
 
 class RiotAsset extends JSAsset {
-  async parse(tagCode) {
-    let config = this.package.riot ||
-      (await this.getConfig(['.riotrc', '.riotrc.js'])) ||
-      {}
+  async getRiotConfig () {
+    if (this.package.riot) return this.package.riot
 
-    let transpiled = riot.compile(
-      tagCode,
-      Object.assign({sourcemap: this.options.sourceMap}, config),
+    return await super.getConfig([ '.riotrc', '.riotrc.js' ])
+  }
+
+  async parse(tag) {
+    const config = (await this.getRiotConfig()) || { }
+
+    const compiled = riot.compile(tag,
+      Object.assign({ sourcemap: this.options.sourceMap }, config),
       this.relativeName
     )
 
-    let code = this.options.sourceMap ? transpiled.code : transpiled
+    this.contents = this.options.sourceMap
+      ? compiled.code
+      : compiled
 
-    code = "var riot = require('riot');\n" + code
-
-    if (transpiled.sourcemap) {
-      this.sourceMap = transpiled.sourcemap.generate()
+    if (compiled.sourcemap) {
+      this.sourceMap = compiled.sourcemap.generate()
       this.sourceMap.sources = [this.relativeName]
       this.sourceMap.sourcesContent = [this.contents]
     }
 
-    return await JSAsset.prototype.parse.call(this, code);
+    return await super.parse(this.contents)
   }
 }
 
