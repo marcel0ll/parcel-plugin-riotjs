@@ -1,3 +1,7 @@
+# No longer maintained
+
+Riot now has an official [parcel plugin](https://github.com/riot/parcel-plugin-riot), so this one is no longer needed.
+
 # parcel-plugin-riotjs
 
 A plugin for compiling riot tags with parcel.
